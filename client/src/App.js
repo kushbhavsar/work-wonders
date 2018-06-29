@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer'
-import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import BidAuction from './pages/BidAuction';
+
 
 const App = () => (
 
   <Router>
         <div >
-            <Navbar />
-            <Footer />
+            <BidAuction/>
         </div>
 
   </Router>

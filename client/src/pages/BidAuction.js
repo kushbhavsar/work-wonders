@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
-import LogginForm from '../components/LogginForm';
-import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
-const Home = () => (
+const BidAuction = () => (
     <div>
         <Navbar/>
         <Container>
@@ -19,14 +18,17 @@ const Home = () => (
 
             <Row>
                 <Col size='md-12'>
-                    <LogginForm />
+                    <p>
+                        How can we help you ?
+                    </p>
+
+                    <button type='button' className = 'btn btn-primary'>Bid</button><br/>
+                    <button type='button' className = 'btn btn-primary'>Auction</button>
+
                 </Col>
             </Row>
         </Container>
-        <Footer/>
-
     </div>
-
 )
 
-export default Home;
+export default BidAuction;

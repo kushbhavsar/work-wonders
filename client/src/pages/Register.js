@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
-import LogginForm from '../components/LogginForm';
-import Footer from '../components/Footer'
+import RegistrationForm from '../components/RegistrationForm';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-
-const Home = () => (
+const Register = () => (
     <div>
         <Navbar/>
         <Container>
@@ -19,14 +18,12 @@ const Home = () => (
 
             <Row>
                 <Col size='md-12'>
-                    <LogginForm />
+                    <RegistrationForm/>
                 </Col>
             </Row>
         </Container>
         <Footer/>
-
     </div>
-
 )
 
-export default Home;
+export default Register;
