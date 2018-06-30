@@ -17,17 +17,25 @@ const BidAuction = () => (
             </Row>
 
             <Row>
-                <Col size='md-12'>
-                    <p>
-                        How can we help you ?
-                    </p>
+                <Col size='md-4'/>
 
-                    <button type='button' className = 'btn btn-primary'>Bid</button><br/>
+                <Col size='md-4'>
+                    <h3>
+                        How can we help you ?
+                    </h3>
+
+                    <button type='button' className = 'btn btn-primary'>Bid</button><br/><br/>
                     <button type='button' className = 'btn btn-primary'>Auction</button>
 
                 </Col>
+
+                <Col size='md-4'/>
+
             </Row>
+
         </Container>
+        <Footer/>
+
     </div>
 )
 
