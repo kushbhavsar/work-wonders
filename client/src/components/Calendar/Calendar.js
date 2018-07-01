@@ -25,25 +25,20 @@ export default class Example extends React.Component {
     // already set timeouts to work well with input fields
     this.timeout = setTimeout(() => this.to.getInput().focus(), 0);
   }
-  showFromMonth() {
+   showFromMonth() {
     const { from, to } = this.state;
     if (!from) {
       return;
     }
-    if (moment(to).diff(moment(from), 'months') < 2) {
+    if (moment(to).diff(moment(from), 'months') < 12) {
       this.to.getDayPicker().showMonth(from);
     }
+
+  //  let duration = [from, to]
+  //  return duration ; 
   }
 
-  dateSelection = (props) => {
 
-    const startDate = props.to;
-    const endDate = props.from;
-
-    return startDate, endDate;
-
-  }
-  
   handleFromChange(from) {
     // Change the from date and focus the "to" input field
     this.setState({ from });
@@ -56,6 +51,8 @@ export default class Example extends React.Component {
     const modifiers = { start: from, end: to };
     return (
       <div className="InputFromTo">
+        {this.props.from}
+
         <DayPickerInput
           value={from}
           placeholder="From"

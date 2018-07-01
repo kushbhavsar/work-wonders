@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './BidForm.css';
-//import Calendar from '../Calendar';
 
 class BidForm extends Component {
 
     state = {
         jobTitle: "",
         jobDescription: "",
-        duration: "",
+        startDate: "",
+        endDate: "",
         maxBid: "",
         auctionDays: "",
     };
@@ -24,12 +24,13 @@ class BidForm extends Component {
         console.log(`   
                         jobTitle: ${this.state.jobTitle}
                         jobDescription: ${this.state.jobDescription}
-                        duration: ${this.state.duration}
+                        startDate: ${this.state.startDate}
+                        endDate: ${this.state.endDate}
                         maxBid: ${this.state.maxBid}
                         auctionDays: ${this.state.auctionDays}
                     `);
 
-        this.setState({ jobTitle: "", jobDescription: "", duration: "", maxBid: "", auctionDays: "", })
+        this.setState({ jobTitle: "", jobDescription: "",startDate: "",endDate: "", maxBid: "", auctionDays: "", })
     }
 
     render() {
@@ -48,19 +49,18 @@ class BidForm extends Component {
                     <textarea className='form-control' name='jobDescription' rows='4' value={this.state.jobDescription} onChange={this.handleInputChange} placeholder='Enter Job Description'> </textarea>
                     </label>
                 </div>
-            {/*
+            
                 <div className ='form-group'>
-                    <label htmlFor='duration'> Duration
 
-                    <Calendar name='duration' 
-                        startDate = {props.from}
-                        endDate = {props.to}
-                        value={this.state.duration} 
-                        onChange={this.handleInputChange}
-                        />
+                    <label  htmlFor='startDate'>Start Date
+                    <input type='text' className='form-control' name='startDate' value={this.state.startDate} onChange={this.handleInputChange} placeholder='MM/DD/YYYY'/>
+                    </label>
+
+                    <label id = 'endDate' htmlFor='endDate'>End Date
+                    <input type='text' className='form-control' name='endDate' value={this.state.endDate} onChange={this.handleInputChange} placeholder='MM/DD/YYYY'/>
                     </label>
                 </div>
-            */}
+            
                 <div className = 'form-group' >
                     <label htmlFor ='maxBid'>Max Bid
 
