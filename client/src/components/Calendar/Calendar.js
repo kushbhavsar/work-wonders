@@ -34,6 +34,16 @@ export default class Example extends React.Component {
       this.to.getDayPicker().showMonth(from);
     }
   }
+
+  dateSelection = (props) => {
+
+    const startDate = props.to;
+    const endDate = props.from;
+
+    return startDate, endDate;
+
+  }
+  
   handleFromChange(from) {
     // Change the from date and focus the "to" input field
     this.setState({ from });
