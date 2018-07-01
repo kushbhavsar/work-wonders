@@ -18,9 +18,15 @@ const Home = () => (
             </Row>
 
             <Row>
-                <Col size='md-12'>
+                
+                <Col size='md-3'/>
+
+                <Col size='md-6'>
                     <LogginForm />
                 </Col>
+
+                <Col size='md-3'/>
+
             </Row>
         </Container>
         <Footer/>

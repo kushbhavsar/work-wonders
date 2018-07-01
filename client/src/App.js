@@ -12,7 +12,7 @@ const App = () => (
 
   <Router>
         <div >
-            <Bid/>
+            <Home/>
         </div>
 
   </Router>
