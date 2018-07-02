@@ -1,20 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Route} from "react-router-dom";
-import HomePage from "../components/HomePage";
-import RegisterPage from "../components/RegisterPage";
-// import NoMatch from "./pages/NoMatch";
-// import Nav from "./components/Nav";
-
+import React, { Component } from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
 
 
 const App = () => (
-  <Router>
-    <div>
-      {/* <Nav /> */}
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/" component={RegisterPage} />
-      </div>
-  </Router>
-);
 
+  <Router>
+        <div >
+            <Home/>
+        </div>
+
+  </Router>
+
+);
 export default App;
