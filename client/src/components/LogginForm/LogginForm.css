@@ -1,0 +1,14 @@
+#logginform {
+    margin-top: 130px;
+    margin-left: 100px;
+}
+
+#userName, #inputPassword {
+    width: 350px;
+}
+
+.formgroup-username {
+
+    margin-bottom: 20px;
+
+}
