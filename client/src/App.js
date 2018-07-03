@@ -12,7 +12,7 @@ const App = () => (
 
   <Router>
         <div >
-            <Home/>
+            <BidAuction/>
         </div>
 
   </Router>
