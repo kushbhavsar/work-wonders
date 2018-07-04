@@ -4,5 +4,17 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
+
+}
+
+#contact {
+    color:#fff;
+    margin-right: 5px;
+}
+
+#details {
+    margin-bottom: 0px;
 }

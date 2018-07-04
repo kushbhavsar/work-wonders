@@ -1,0 +1,15 @@
+.navbar {
+    font-style: "Roboto", sans-serif;
+    background-color: #343a40;
+    margin-bottom: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+
+}
+
+a.navbar-bar {
+    color: #fff;
+
+}

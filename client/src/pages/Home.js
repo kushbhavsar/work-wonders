@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
@@ -7,32 +7,37 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
 
 
-const Home = () => (
-    <div>
-        <Navbar/>
-        <Container>
-            <Row>
-                <Col size='md-12'>
-                    <h1>Work For Me</h1>
-                </Col>
-            </Row>
+class Home extends Component {
 
-            <Row>
-                
-                <Col size='md-3'/>
 
-                <Col size='md-6'>
-                    <LogginForm />
-                </Col>
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <Container>
+                    <Row>
+                        <Col size='md-12'>
+                            <h1>Work For Me</h1>
+                        </Col>
+                    </Row>
 
-                <Col size='md-3'/>
+                    <Row>
 
-            </Row>
-        </Container>
-        <Footer/>
+                        <Col size='md-3' />
 
-    </div>
+                        <Col size='md-6'>
+                            <LogginForm />
+                        </Col>
 
-)
+                        <Col size='md-3' />
+
+                    </Row>
+                </Container>
+                <Footer />
+
+            </div>
+        )
+    }
+}
 
 export default Home;
