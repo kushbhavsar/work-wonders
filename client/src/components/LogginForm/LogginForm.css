@@ -12,3 +12,12 @@
     margin-bottom: 20px;
 
 }
+
+.btn-primary.btn-sm {
+    margin: 10px 0;
+}
+
+#line {
+    width: 350px;
+    margin: 10px 0px 15px 0;
+}

@@ -59,8 +59,15 @@ class LogginForm extends Component {
                 </div>
 
                 <div>
-                    <a href="#" >Register</a>
+                    <button type="button" className= "btn btn-primary btn-sm"> Sign in</button>
                 </div>
+
+                <hr id= "line"/>
+
+                <div  id="signUp">
+                   <p> Not a member yet ... <a href="#" > Sign up</a></p>
+                </div>
+
 
             </form>
         );
