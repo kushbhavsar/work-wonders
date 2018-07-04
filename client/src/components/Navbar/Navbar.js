@@ -4,7 +4,7 @@ import './Navbar.css';
 
 
 const Navbar = props => (
-    <nav className = 'navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className = 'navbar navbar-expand-lg navbar-light '>
         <Link className='navbar-bar' to='/'>
             Home
         </Link>

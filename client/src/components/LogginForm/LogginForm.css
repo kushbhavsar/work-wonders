@@ -1,6 +1,7 @@
 #logginform {
     margin-top: 130px;
     margin-left: 100px;
+    font-style: "Ubuntu", sans-serif;
 }
 
 #userName, #inputPassword {
