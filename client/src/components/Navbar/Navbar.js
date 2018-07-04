@@ -4,32 +4,25 @@ import './Navbar.css';
 
 
 const Navbar = props => (
-    <nav className = 'navbar navbar-expand-lg navbar-light '>
-        <Link className='navbar-bar' to='/'>
-            Home
-        </Link>
+    <nav className='navbar navbar-expand-lg navbar-light ' >
+            <Link className='navbar-bar' to='/'>
+                Home
+            </Link>
 
-        <div>
-            <ul className='navbar-nav'>
-                <li>
-                    <Link to='/' className='nav-link'>
-                        About
+            <div >
+                <ul className="navbar-nav">
+                    <li>
+                        <Link to='/' className='nav-link'>
+                            About
                     </Link>
-                </li>
-
-                <li>
-                    <Link to='/' className='nav-link'>
-                        Contact 
+                    </li>
+                    <li>
+                        <Link to='/' className='nav-link'>
+                            Twitter
                     </Link>
-                </li>
-
-                <li>
-                    <Link to='/' className='nav-link'>
-                        Twitter
-                    </Link>
-                </li>
-            </ul>
-        </div>
+                    </li>
+                </ul>
+            </div>
     </nav>
 );
 
