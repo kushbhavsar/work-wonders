@@ -23,13 +23,13 @@ class Home extends Component {
 
                     <Row>
 
-                        <Col size='md-3' />
+                        <Col size='md-3 sm-1'  />
 
-                        <Col size='md-6'>
+                        <Col size='md-6 sm-6'>
                             <LogginForm />
                         </Col>
 
-                        <Col size='md-3' />
+                        <Col size='md-3 sm-1' />
 
                     </Row>
                 </Container>

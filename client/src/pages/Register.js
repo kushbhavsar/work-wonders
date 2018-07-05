@@ -15,7 +15,7 @@ const Register = () => (
                     <h1>Work For Me</h1>
                 </Col>
             </Row>
-
+    
             <Row>
                 <Col size='md-12'>
                     <RegistrationForm/>

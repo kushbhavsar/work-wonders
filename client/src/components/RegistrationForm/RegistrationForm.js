@@ -1,41 +1,106 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Input } from '../Forms';
 import './RegistrationForm.css';
 
-const RegistrationForm = props => (
-    <form>
-        <div className='form-group'>
-            <label htmlFor="firstName">First name</label>
-            <input type='text' className='form-control' id='firstName' placeholder='Enter your first name'/>
+class RegistrationForm extends Component {
+    state = {
+        firstName: "",
+        lastName: "",
+        userName: "",
+        email: "",
+        address: "",
+        city: "",
+    };
 
-        </div>
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
-        <div className='form-group'>
-            <label htmlFor ='lastName'>Last Name</label>
-            <input type='text' className='form-control' id='lastName' placeholder='Enter your last name' />
-        </div>
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.setState({ firstName: "", lastName: "", userName: "", email: "", address: "", city: "" })
+    };
 
-        <div className='form-group'>
-            <label htmlFor ='userName'>Last Name</label>
-            <input type='text' className='form-control' id='userName' placeholder='Username' />
-        </div>
+    render() {
+        return (
+                <form>
 
-        <div className='form-group'>
-            <label htmlFor ='emailAddress'>Email Address</label>
-            <input type='email' className='form-control' id='emailAddress' placeholder='example@gmail.com' />
-        </div>
 
-        <div className='form-group'>
-            <label htmlFor ='address'>Address</label>
-            <input type='text' className='form-control' id='address' placeholder='Address' />
-        </div>
+                <Input
+                    value={this.state.firstName}
+                    label = "First Name"
+                    onChange={this.handleInputChange}
+                    name="firstName"
+                    placeholder="First Name"
+                />
 
-        <div className='form-group'>
-            <label htmlFor ='city'>City</label>
-            <input type='text' className='form-control' id='city' placeholder='City' />
-        </div>
+                <Input
+                    value={this.state.lastName}
+                    label = "Last Name"
+                    onChange={this.handleInputChange}
+                    name="lastName"
+                    placeholder="Last Name"
+                />
 
-        <button type="submit" className="btn btn-primary">Register</button>
-    </form>
-)
+                <Input
+                    value={this.state.userName}
+                    label = "username"
+                    onChange={this.handleInputChange}
+                    name="username"
+                    placeholder="username"
+                />
+
+                <Input
+                    value={this.state.email}
+                    label = "Email"
+                    onChange={this.handleInputChange}
+                    name="email"
+                    placeholder="email"
+                />
+
+                <Input
+                    value={this.state.address}
+                    label = "Address"
+                    onChange={this.handleInputChange}
+                    name="address"
+                    placeholder="Address"
+                />
+
+                <Input
+                    value={this.state.city}
+                    label = "City"
+                    onChange={this.handleInputChange}
+                    name="city"
+                    placeholder="City"
+                />
+
+                <Input
+                    value={this.state.state}
+                    label = "State"
+                    onChange={this.handleInputChange}
+                    name="firstName"
+                    placeholder="First Name"
+                />
+
+                <Input
+                    value={this.state.zip}
+                    label = "Zip"
+                    onChange={this.handleInputChange}
+                    name="zip"
+                    placeholder="zip"
+                />
+
+                <button type="submit" className="btn btn-primary">Register</button>
+            
+                </form>
+
+
+        );
+    }
+}
+
 
 export default RegistrationForm;
