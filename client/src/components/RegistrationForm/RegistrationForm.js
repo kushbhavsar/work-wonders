@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Input, USstate } from '../Forms';
 import './RegistrationForm.css';
 
-
-
 class RegistrationForm extends Component {
     state = {
         firstName: "",
@@ -30,11 +28,6 @@ class RegistrationForm extends Component {
         event.preventDefault();
         this.setState({ firstName: "", lastName: "", userName: "", email: "", address: "",address_2:"", city: "", USstate: "", zip: "" })
     };
-
-
-
-
-
 
     render() {
         return (
@@ -114,7 +107,7 @@ class RegistrationForm extends Component {
                         />
                     </div>
                 </div>
-                <button type="submit" className="btn btn-primary">Register</button>
+                <button type="submit" className="btn btn-lg" id="registerBtn">Register</button>
 
             </form>
         );
