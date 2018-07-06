@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Input, USstate } from '../Forms';
 import './RegistrationForm.css';
 
-const allStates = [ "AK","AL","AR","AS","AZ","CA","CO","CT","DC","DE","FL","GA","GU","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","PR","RI","SC","SD","TN","TX","UT","VA","VI","VT","WA","WI","WV","WY"]
 
 
 class RegistrationForm extends Component {
@@ -104,7 +103,7 @@ class RegistrationForm extends Component {
                     <div className="form-group col-md-4" >
                         <USstate
                             value={this.state.USstate} label="State" onChange={this.handleInputChange}
-                            name="State" placeholder="State" allStates= {this.allStates}
+                            name="State" placeholder="State" 
                         />
                     </div>
 
