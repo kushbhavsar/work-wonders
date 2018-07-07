@@ -1,3 +1,20 @@
 #endDate {
     margin-left: 40px;
 }
+
+#postjobBtn {
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+#postForm {
+    margin-top: 20px;
+}
+
+#auctionDays {
+    width: 40%;
+}
+
+#jobDescription {
+    width: 300%;
+}
