@@ -17,13 +17,11 @@ const BidAuction = () => (
             </Row>
 
             <Row>
-                <Col size='md-3'/>
 
-                <Col size='md-9'>
+                <Col size='md-12'>
                     <PostJob/>
                 </Col>
 
-                <Col size='md-3'/>
 
             </Row>
 
