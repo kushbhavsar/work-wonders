@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import BidAuction from './pages/BidAuction';
-import Postpage from './pages/PostJob';
+import Postpage from './pages/Postpage';
 import LogginForm from './components/LogginForm';
 import RegistrationForm from './components/RegistrationForm'
 
