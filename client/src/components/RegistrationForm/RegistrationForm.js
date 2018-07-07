@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, USstate } from '../Forms';
+import { Input, USstate } from './Forms';
 import './RegistrationForm.css';
 
 class RegistrationForm extends Component {

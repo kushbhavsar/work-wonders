@@ -13,7 +13,7 @@ const App = () => (
 
   <Router>
         <div >
-            < Route component = {Register}/>
+            < Route component = {BidAuction}/>
         </div>
 
   </Router>
