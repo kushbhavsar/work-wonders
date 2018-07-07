@@ -4,7 +4,7 @@ import Row from '../components/Row';
 import Col from '../components/Col';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import PostJob from "../components/PostJob";
+import Post_or_Bid from "../components/Post_or_Bid";
 
 const BidAuction = () => (
     <div>
@@ -19,7 +19,7 @@ const BidAuction = () => (
             <Row>
 
                 <Col size='md-12'>
-                    <PostJob/>
+                    <Post_or_Bid/>
                 </Col>
 
 

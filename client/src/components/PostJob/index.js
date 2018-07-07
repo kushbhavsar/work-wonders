@@ -1,1 +1,1 @@
-export {default} from "./PostJob";
+export { default } from './PostJob';

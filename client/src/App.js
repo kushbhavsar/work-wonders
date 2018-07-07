@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import BidAuction from './pages/BidAuction';
-import Bid from './pages/Bid';
+import Postpage from './pages/PostJob';
 import LogginForm from './components/LogginForm';
 import RegistrationForm from './components/RegistrationForm'
 
@@ -13,7 +13,7 @@ const App = () => (
 
   <Router>
         <div >
-            < Route component = {BidAuction}/>
+            < Route component = {Postpage}/>
         </div>
 
   </Router>
