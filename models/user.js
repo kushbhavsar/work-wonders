@@ -8,6 +8,7 @@ const userSchema = new Schema({
     passWord: { type: String, require: true },
     address: { type: String, require: true },
     city: { type: String, require: true },
+    state: { type: String }
 });
 
 UserSchema.pre('save', function (next) {
