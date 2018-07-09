@@ -5,15 +5,18 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import BidAuction from './pages/BidAuction';
 import Postpage from './pages/Postpage';
-import LogginForm from './components/LogginForm';
-import RegistrationForm from './components/RegistrationForm'
 
 
 const App = () => (
 
   <Router>
         <div >
-            < Route component = {Postpage}/>
+          <Switch>
+            < Route  exact path="/" component = {Home}/>
+            < Route  exact path = "/postpage" component = {Postpage}/> 
+            < Route  exact path = "/register" component = {Register}/>
+            < Route  exact path = "/bidauction" component = {BidAuction}/> 
+          </Switch>
         </div>
 
   </Router>

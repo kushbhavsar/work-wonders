@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import { Input, USstate } from './Forms';
 import './RegistrationForm.css';
 
@@ -120,7 +121,8 @@ class RegistrationForm extends Component {
                         />
                     </div>
                 </div>
-                <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">Register</button>
+                <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">Register
+                </button>
 
             </form>
         );
