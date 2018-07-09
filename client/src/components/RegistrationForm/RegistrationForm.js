@@ -122,6 +122,7 @@ class RegistrationForm extends Component {
                     </div>
                 </div>
                 <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">Register
+                    <Link to="/bidauction"></Link>
                 </button>
 
             </form>
