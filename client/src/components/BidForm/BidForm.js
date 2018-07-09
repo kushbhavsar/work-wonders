@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import './PostJob.css';
+import './BidForm.css';
 
-class PostJob extends Component {
+class BidForm extends Component {
 
     state = {
         jobTitle: "",
         jobDescription: "",
         startDate: "",
         endDate: "",
-        maxPayment: "",
+        maxBid: "",
         auctionDays: "",
     };
 
@@ -26,27 +26,27 @@ class PostJob extends Component {
                         jobDescription: ${this.state.jobDescription}
                         startDate: ${this.state.startDate}
                         endDate: ${this.state.endDate}
-                        maxPayment: ${this.state.maxPayment}
+                        maxBid: ${this.state.maxBid}
                         auctionDays: ${this.state.auctionDays}
                     `);
 
-        this.setState({ jobTitle: "", jobDescription: "",startDate: "",endDate: "", maxPayment: "", auctionDays: "", })
+        this.setState({ jobTitle: "", jobDescription: "",startDate: "",endDate: "", maxBid: "", auctionDays: "", })
     }
 
     render() {
 
 
         return (
-            <form id="postForm">
+            <form>
                 <div className='form-group'>
                     <label htmlFor='jobTitle'>Job Title
-                    <input type='text' className='form-control' name='jobTitle' value={this.state.jobTitle} onChange={this.handleInputChange} placeholder='Enter job title' />
+                    <input type='text' className='form-control' name='jobTitle' value={this.state.jobTitle} onChange={this.handleInputChange} placeholder='Enter job title'/>
                     </label>
                 </div>
 
                 <div className='form-group'>
                     <label htmlFor='jobDescription'> Job Description
-                    <textarea className='form-control' id="jobDescription" name='jobDescription' rows='4' value={this.state.jobDescription} onChange={this.handleInputChange} placeholder='Enter Job Description'> </textarea>
+                    <textarea className='form-control' name='jobDescription' rows='4' value={this.state.jobDescription} onChange={this.handleInputChange} placeholder='Enter Job Description'> </textarea>
                     </label>
                 </div>
             
@@ -62,13 +62,13 @@ class PostJob extends Component {
                 </div>
             
                 <div className = 'form-group' >
-                    <label htmlFor ='maxPayment'>Max Payment
+                    <label htmlFor ='maxBid'>Max Bid
 
                     <div className="input-group mb-3" >
                         <div className="input-group-prepend">
                             <span className="input-group-text">$</span>
                         </div>
-                        <input type='text' className='form-control' name='maxPayment' value = {this.state.maxPayment} onChange = {this.handleInputChange} aria-label="Amount (to the nearest dollar)" placeholder='Enter your max payment amount'/>
+                        <input type='text' className='form-control' name='maxBid' value = {this.state.maxBid} onChange = {this.handleInputChange} aria-label="Amount (to the nearest dollar)" placeholder='Enter your bid amount'/>
                         <div className="input-group-append">
                             <span className="input-group-text">.00</span>
                         </div>
@@ -78,15 +78,15 @@ class PostJob extends Component {
                 </div>
                 
                 <div className = 'form-group' >
-                    <label htmlFor ='auctionDays'>Post job for # days</label>
-                    <input id="auctionDays" type='text' className='form-control' name='auctionDays' value= {this.state.auctionDays} onChange= {this.handleInputChange} placeholder='Enter your bid amount'/>
+                    <label htmlFor ='auctionDays'>Auction last for # days</label>
+                    <input type='text' className='form-control' name='auctionDays' value= {this.state.auctionDays} onChange= {this.handleInputChange} placeholder='Enter your bid amount'/>
                 </div>
 
-                <button onClick={this.handleFormSubmit} id="postjobBtn" type="submit" className="btn btn-primary btn-lg">Submit</button>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
 
             </form>
         );
     }
 };
 
-export default PostJob;
+export default BidForm;

@@ -1,1 +1,0 @@
-export {default} from "./Post_or_Bid";
