@@ -4,10 +4,10 @@ import Row from '../components/Row';
 import Col from '../components/Col';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import PostJob from '../components/PostJob';
+import BidForm from '../components/BidForm';
 
 
-const Postpage = () => (
+const Bid = () => (
 
     <div>
         <Navbar/>
@@ -15,7 +15,7 @@ const Postpage = () => (
             <Row>
                 <Col size='md-3'/>
                 <Col size='md-6'>
-                    <PostJob/>
+                    <BidForm/>
                 </Col>
                 <Col size='md-3'/>
             </Row>
@@ -26,4 +26,4 @@ const Postpage = () => (
 
 );
 
-export default Postpage;
+export default Bid;

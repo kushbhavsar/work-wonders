@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import './LogginForm.css';
 
@@ -60,9 +59,7 @@ class LogginForm extends Component {
                 </div>
 
                 <div>
-                    <button type="button"  className= "btn btn-primary btn-sm"> Sign in
-                    <Link to="/bidauction"/>
-                    </button>
+                    <button type="button" className= "btn btn-primary btn-sm"> Sign in</button>
                 </div>
 
                 <hr id= "line"/>

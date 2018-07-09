@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
@@ -9,6 +8,8 @@ import Navbar from '../components/Navbar';
 
 
 class Home extends Component {
+
+
     render() {
         return (
             <div>
@@ -22,13 +23,13 @@ class Home extends Component {
 
                     <Row>
 
-                        <Col size='md-3 sm-1'  />
+                        <Col size='md-3' />
 
-                        <Col size='md-6 sm-6'>
+                        <Col size='md-6'>
                             <LogginForm />
                         </Col>
 
-                        <Col size='md-3 sm-1' />
+                        <Col size='md-3' />
 
                     </Row>
                 </Container>
