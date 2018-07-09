@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
@@ -15,10 +16,11 @@ const Register = () => (
                     <h1>Work For Me</h1>
                 </Col>
             </Row>
-
+    
             <Row>
                 <Col size='md-12'>
                     <RegistrationForm/>
+                    <Link to="/bidauction" ></Link>
                 </Col>
             </Row>
         </Container>
