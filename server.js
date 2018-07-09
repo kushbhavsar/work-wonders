@@ -1,9 +1,13 @@
 const express = require("express");
+const path = require('path');
+//const favicon = require('serve-favicon');
+//const logger = require('morgan');
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+var auth = require('./routes/auth');
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+app.use('api/auth', auth);
+
 
 const db = require("./config/keys").mongoURI;
 
