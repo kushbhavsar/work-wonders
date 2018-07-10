@@ -4,8 +4,8 @@ const path = require('path');
 //const logger = require('morgan');
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const user = require('./routes/users');
 const jobs = require("./routes/jobs");
+const users = require("./routes/users");
 const app = express();
 const PORT = process.env.PORT || 3001;
 var auth = require('./routes/auth');
@@ -21,11 +21,12 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(jobs);
-app.use(user);
+app.use(users);
 app.use('api/auth', auth);
 
 
-const db = require("./config/keys").mongoURI;
+//const db = require("./config/keys").localhost : 27017;
+const db = "mongodb://localhost/work"
 
 
 // Connect to the Mongo DB

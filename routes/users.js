@@ -19,4 +19,16 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
+
+// router.get("/user", function(req, res) {
+//   db.user.find({})
+//     .then(function(dbuser) {
+    
+//       res.json(dbuser);
+//     })
+//     .catch(function(err) {
+//       res.json(err);
+//     });
+// });
+
 module.exports = router;

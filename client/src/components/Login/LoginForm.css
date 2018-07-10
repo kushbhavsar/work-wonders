@@ -1,6 +1,7 @@
 #logginform {
-    margin-top: 130px;
+    margin-top: 80px;
     margin-left: 100px;
+    font-style: "Ubuntu", sans-serif;
 }
 
 #userName, #inputPassword {
@@ -12,3 +13,30 @@
     margin-bottom: 20px;
 
 }
+
+.btn-primary.btn-sm {
+    margin: 10px 0;
+}
+
+#line {
+    width: 350px;
+    margin: 10px 0px 15px 0;
+}
+
+
+/*
+@media (min-width: 400px) {
+  #logginform {
+      margin-top: 0px;
+      margin-left: 19px;
+  }
+
+  
+  #container {
+      padding-bottom: 51px;
+  }
+
+  
+}
+
+*/

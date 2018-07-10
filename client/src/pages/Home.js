@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+//import { Link } from "react-router-dom";
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
@@ -7,32 +8,35 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
 
 
-const Home = () => (
-    <div>
-        <Navbar/>
-        <Container>
-            <Row>
-                <Col size='md-12'>
-                    <h1>Work For Me</h1>
-                </Col>
-            </Row>
+class Home extends Component {
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <Container>
+                    <Row>
+                        <Col size='md-12'>
+                            <h1>Work For Me</h1>
+                        </Col>
+                    </Row>
 
-            <Row>
-                
-                <Col size='md-3'/>
+                    <Row>
 
-                <Col size='md-6'>
-                    <LogginForm />
-                </Col>
+                        <Col size='md-3 sm-1'  />
 
-                <Col size='md-3'/>
+                        <Col size='md-6 sm-6'>
+                            <LogginForm />
+                        </Col>
 
-            </Row>
-        </Container>
-        <Footer/>
+                        <Col size='md-3 sm-1' />
 
-    </div>
+                    </Row>
+                </Container>
+                <Footer />
 
-)
+            </div>
+        )
+    }
+}
 
 export default Home;
