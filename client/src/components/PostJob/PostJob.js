@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './PostJob.css';
+import {Link} from 'react-router-dom';
+
 
 class PostJob extends Component {
 
@@ -81,8 +83,11 @@ class PostJob extends Component {
                     <label htmlFor ='auctionDays'>Post job for # days</label>
                     <input id="auctionDays" type='text' className='form-control' name='auctionDays' value= {this.state.auctionDays} onChange= {this.handleInputChange} placeholder='Enter your bid amount'/>
                 </div>
-
-                <button onClick={this.handleFormSubmit} id="postjobBtn" type="submit" className="btn btn-primary btn-lg">Submit</button>
+                
+           
+                <button onClick={this.handleFormSubmit} id="postjobBtn" type="submit" className="btn btn-primary btn-lg">
+                    Submit
+                </button>
 
             </form>
         );
