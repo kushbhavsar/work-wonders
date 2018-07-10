@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const jobs = require("./routes/jobs");
+const users = require("./routes/users");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(jobs);
+app.use(users);
 
 //const db = require("./config/keys").localhost : 27017;
 const db = "mongodb://localhost/work"
