@@ -26,4 +26,4 @@ const LogginForm = props => (
     </form>
 )
 
-export default LogginForm;
+export default LoginForm;
