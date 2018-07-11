@@ -7,8 +7,8 @@ const morgan = require('morgan');
 const UserSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    eMail: { type: String, trim: true, unique:true, match:[/.+@.+\..+/, "Please enter a valid e-mail address"],  require: "Email is Required" },
-    passWord: { type: String, trim: true, require: "Password is Required", validate:  [
+    email: { type: String, trim: true, unique:true, match:[/.+@.+\..+/, "Please enter a valid e-mail address"],  require: "Email is Required" },
+    password: { type: String, trim: true, require: "Password is Required", validate:  [
         function(input) {
           return input.length >= 6;
         },
@@ -18,7 +18,8 @@ const UserSchema = new Schema({
     address: { type: String, require: true },
     address2: { type: String, require: true },
     city: { type: String, require: true },
-    state: { type: String }
+    USstate: { type: String },
+    zip: {type: Number, require: true },
 });
 
 UserSchema.pre('save', function (next) {

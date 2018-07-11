@@ -3,7 +3,7 @@ const router = require("express").Router();
 // const db = require("../models");
 const jobsController = require("../controllers/jobsController");
 
-router.route("/")
+router.route("/jobs")
   .get(jobsController.findAll)
   .post(jobsController.create);
 
