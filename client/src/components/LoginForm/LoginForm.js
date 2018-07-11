@@ -26,6 +26,9 @@ class LoginForm extends Component {
             username: "",
             password: ""
         });
+
+        window.location.href = "/bidauction" 
+
     };
 
     render() {
@@ -60,15 +63,15 @@ class LoginForm extends Component {
                 </div>
 
                 <div>
-                    <button type="button"  className= "btn btn-primary btn-sm"> Sign in
-                    <Link to="/bidauction"/>
-                    </button>
+                        <button type="button" onClick={this.handleFormSubmit} className= "btn btn-primary btn-sm">
+                            Sign In
+                        </button>
                 </div>
 
                 <hr id= "line"/>
 
                 <div  id="signUp">
-                   <p> Not a member yet ... <Link to ="/RegisterationFrom" /> Sign up</p>
+                   <p> Not a member yet ... <a href="/register" > Sign up</a></p>
                 </div>
 
 

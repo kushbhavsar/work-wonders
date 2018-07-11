@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import './Post_or_Bid.css'
 
 class Post_or_Bid extends Component {
@@ -13,7 +14,10 @@ class Post_or_Bid extends Component {
 
                 <div id="btngroup">
                     <button type='button' id="bid" className = 'btn btn-lg'>Bid</button>
-                    <button type='button' id="postjob" className = 'btn btn-lg '>Post a Job</button>
+                    
+                    <Link to="/postpage">
+                        <button type='button' id="postjob" className = 'btn btn-lg '>Post a Job</button>
+                    </Link>
                 </div>
             </div>
 

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './PostJob.css';
+import {Link} from 'react-router-dom';
+
 
 class PostJob extends Component {
 
     state = {
         jobTitle: "",
         jobDescription: "",
-        startDate: "",
-        endDate: "",
         maxPayment: "",
         auctionDays: "",
     };
@@ -24,13 +24,11 @@ class PostJob extends Component {
         console.log(`   
                         jobTitle: ${this.state.jobTitle}
                         jobDescription: ${this.state.jobDescription}
-                        startDate: ${this.state.startDate}
-                        endDate: ${this.state.endDate}
                         maxPayment: ${this.state.maxPayment}
                         auctionDays: ${this.state.auctionDays}
                     `);
 
-        this.setState({ jobTitle: "", jobDescription: "",startDate: "",endDate: "", maxPayment: "", auctionDays: "", })
+        this.setState({ jobTitle: "", jobDescription: "", maxPayment: "", auctionDays: "", })
     }
 
     render() {
@@ -50,16 +48,7 @@ class PostJob extends Component {
                     </label>
                 </div>
             
-                <div className ='form-group'>
-
-                    <label  htmlFor='startDate'>Start Date
-                    <input type='text' className='form-control' name='startDate' value={this.state.startDate} onChange={this.handleInputChange} placeholder='MM/DD/YYYY'/>
-                    </label>
-
-                    <label id = 'endDate' htmlFor='endDate'>End Date
-                    <input type='text' className='form-control' name='endDate' value={this.state.endDate} onChange={this.handleInputChange} placeholder='MM/DD/YYYY'/>
-                    </label>
-                </div>
+               
             
                 <div className = 'form-group' >
                     <label htmlFor ='maxPayment'>Max Payment
@@ -81,8 +70,11 @@ class PostJob extends Component {
                     <label htmlFor ='auctionDays'>Post job for # days</label>
                     <input id="auctionDays" type='text' className='form-control' name='auctionDays' value= {this.state.auctionDays} onChange= {this.handleInputChange} placeholder='Enter your bid amount'/>
                 </div>
-
-                <button onClick={this.handleFormSubmit} id="postjobBtn" type="submit" className="btn btn-primary btn-lg">Submit</button>
+                
+           
+                <button onClick={this.handleFormSubmit} id="postjobBtn" type="submit" className="btn btn-primary btn-lg">
+                    Submit
+                </button>
 
             </form>
         );
