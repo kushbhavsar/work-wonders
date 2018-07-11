@@ -11,12 +11,19 @@ class Bid extends Component {
         maxPayment : "$100",
         auctionDays : "3 days"
     }
+
+
     render() {
         return (
+
+            <div>
             <Cards
-            jobTitle = {this.state.jobTitle} jobDescription = {this.state.jobDescription} timer = {this.state.auctionDays}
+                jobTitle = {this.state.jobTitle} 
+                jobDescription = {this.state.jobDescription}
+                timer = {this.state.auctionDays}
 
             />
+            </div>
 
         )
     }
