@@ -6,6 +6,10 @@ router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
+  router.route("/users")
+  .get(usersController.findAll)
+  .post(usersController.create);
+
 router
   .route("/:id")
   .get(usersController.findById)
