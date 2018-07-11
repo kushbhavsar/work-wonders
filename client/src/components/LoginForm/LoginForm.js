@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
-import './LogginForm.css';
+import './LoginForm.css';
 
 
-class LogginForm extends Component {
+class LoginForm extends Component {
     state = {
         username: "",
         password: ""
@@ -30,7 +30,7 @@ class LogginForm extends Component {
 
     render() {
         return (
-            <form id='logginform'>
+            <form id='loginform'>
                 <div className='form-group username'>
                     {// <label htmlFor='userName'>Username</label> 
                     }
@@ -68,7 +68,7 @@ class LogginForm extends Component {
                 <hr id= "line"/>
 
                 <div  id="signUp">
-                   <p> Not a member yet ... <a href="#" > Sign up</a></p>
+                   <p> Not a member yet ... <Link to ="/RegisterationFrom" /> Sign up</p>
                 </div>
 
 
