@@ -15,8 +15,6 @@ class RegistrationForm extends Component {
         city: "",
         USstate:"",
         zip: "",
-
-
     };
 
     handleInputChange = event => {
