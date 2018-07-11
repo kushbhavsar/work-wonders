@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import { Input, USstate } from './Forms';
 import './RegistrationForm.css';
+import Api from "../../utils/Api";
 
 class RegistrationForm extends Component {
     state = {
@@ -9,13 +9,12 @@ class RegistrationForm extends Component {
         lastName: "",
         userName: "",
         email: "",
+        password:"",
         address: "",
         address_2:"",
         city: "",
         USstate:"",
         zip: "",
-
-
     };
 
     handleInputChange = event => {
@@ -25,29 +24,49 @@ class RegistrationForm extends Component {
         });
     };
 
+
+
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(`   first name: ${this.state.firstName}
-                        last name: ${this.state.firstName}
+                        last name: ${this.state.lastName}
                         email: ${this.state.email}
+                        password: ${this.state.password}
                         address: ${this.state.address}
                         address_2: ${this.state.address_2}
                         city: ${this.state.city}
                         USstate: ${this.state.USstate}
                         zip: ${this.state.zip}`);
-    
 
-        this.setState({ firstName: "", lastName: "", userName: "", email: "", address: "",address_2:"", city: "", USstate: "", zip: "" })
+        Api.saveUsers({
+
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password,
+            address: this.state.address,
+            address_2: this.state.address_2,
+            city: this.state.city,
+            USstate: this.state.USstate,
+            zip: this.state.zip
+
+        })
+         .catch(err => console.log(err));
+
+
+        //window.location.href = "/bidauction" 
+    
+        this.setState({ firstName: "", lastName: "", password: "", email: "", address: "",address_2:"", city: "", USstate: "", zip: "" })
     };
 
     render() {
         return (
-            <form className="needs-validation" noValidate>
+            <form >
 
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <Input
-                            value={this.state.firstName} label="First Name" onChange={this.handleInputChange} name="firstName" placeholder="First Name" required
+                            value={this.state.firstName} label="First Name" onChange={this.handleInputChange} name="firstName" placeholder="First Name" 
                         />
                         <div className="invalid-feedback">
                             Please enter your First name.
@@ -58,7 +77,7 @@ class RegistrationForm extends Component {
 
                         <Input
                             value={this.state.lastName} label="Last Name" onChange={this.handleInputChange}
-                            name="lastName" placeholder="Last Name" required
+                            name="lastName" placeholder="Last Name" 
                         />
                     </div>
                 </div>
@@ -66,15 +85,15 @@ class RegistrationForm extends Component {
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <Input
-                            value={this.state.userName} label="username" onChange={this.handleInputChange}
-                            name="userName" placeholder="username" required
+                            value={this.state.email} label="Email" onChange={this.handleInputChange}
+                            name="email" placeholder="email@example.com" 
                         />
                     </div>
                 
                     <div className="form-group col-md-6">
                         <Input
-                            value={this.state.email} label="Email" onChange={this.handleInputChange}
-                            name="email" placeholder="email" required
+                            value={this.state.password} label="Password" onChange={this.handleInputChange}
+                            name="password" placeholder="password" 
                         />
                     </div>
                 </div>
@@ -83,7 +102,7 @@ class RegistrationForm extends Component {
                     <div className="form-group col-md-6" >
                         <Input
                             value={this.state.address} label="Address" onChange={this.handleInputChange}
-                            name="address" placeholder="123 Walnut Street" required
+                            name="address" placeholder="123 Walnut Street" 
                         />
                     </div>
                     <div className="form-group col-md-6" />
@@ -103,26 +122,28 @@ class RegistrationForm extends Component {
                     <div className="form-group col-md-4" >
                         <Input
                             value={this.state.city} label="City" onChange={this.handleInputChange}
-                            name="city" placeholder="City" required
+                            name="city" placeholder="City" 
                         />
                     </div>
 
                     <div className="form-group col-md-4" >
                         <USstate
                             value={this.state.USstate} label="State" onChange={this.handleInputChange}
-                            name="State" placeholder="State"  required
+                            name="State" placeholder="State"  
                         />
                     </div>
 
                     <div className="form-group col-md-4" >
                         <Input
                             value={this.state.zip} label="Zip" onChange={this.handleInputChange} name="zip"
-                            placeholder="zip" required
+                            placeholder="zip" 
                         />
                     </div>
                 </div>
-                <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">Register
-                    <Link to="/bidauction"></Link>
+
+
+                <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">
+                    Register
                 </button>
 
             </form>
