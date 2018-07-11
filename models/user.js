@@ -1,12 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
+const validator = require('validator');
+const morgan = require('morgan');
 
 const UserSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    eMail: { type: String, require: true },
-    passWord: { type: String, require: true },
+    eMail: { type: String, trim: true, unique:true, match:[/.+@.+\..+/, "Please enter a valid e-mail address"],  require: "Email is Required" },
+    passWord: { type: String, trim: true, require: "Password is Required", validate:  [
+        function(input) {
+          return input.length >= 6;
+        },
+        "Password should be longer."
+      ]
+   },
     address: { type: String, require: true },
     address2: { type: String, require: true },
     city: { type: String, require: true },

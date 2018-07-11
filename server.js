@@ -12,6 +12,7 @@ var auth = require('./routes/auth');
 
 
 
+
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

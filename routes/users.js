@@ -9,7 +9,7 @@ require('../config/passport')(passport);
 
 
 
-router.route("/")
+router.route("/users")
   .get(usersController.findAll)
   .post(usersController.create);
 
