@@ -54,7 +54,7 @@ class RegistrationForm extends Component {
          .catch(err => console.log(err));
 
 
-        //window.location.href = "/bidauction" 
+       window.location.href = "/bidauction" 
     
         this.setState({ firstName: "", lastName: "", password: "", email: "", address: "",address_2:"", city: "", USstate: "", zip: "" })
     };
