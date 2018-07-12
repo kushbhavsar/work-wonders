@@ -13,12 +13,14 @@ export default {
     return axios.post("/users", userData);
   },
   getJobs: function() {
-    return axios.get("/jobs/");
+    return axios.get("/jobs");
   },
+ /*  review code
   getJobs: function(id) {
     return axios.get("/jobs/" + id);
   },
 
+  */
   deleteJobs: function(id) {
     return axios.delete("/jobs/" + id);
   },
