@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Cards } from './Cards';
 import Api from '../../utils/Api';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {Input} from '../RegistrationForm/Forms/Input';
 
 class Bid extends Component {
 
@@ -13,7 +14,8 @@ class Bid extends Component {
         maxPayment: "",
         auctionDays: "",
         jobs: [],
-        modal: false
+        modal: false,
+        bidAmount: ""
     }
 
     componentDidMount() {
@@ -53,11 +55,21 @@ class Bid extends Component {
                                 />
                                 
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                                    <ModalHeader toggler={this.toggle}>{job.jobTitle}</ModalHeader>
-                                    <ModalBody></ModalBody>
+                                    <ModalHeader toggler={this.state.toggle}>{job.jobTitle}</ModalHeader>
+                                    <ModalBody>
+                                        <div className="form-row">
+                                            <div className="form-group col-md-6">
+                                                <Input
+                                                    value={this.state.bidAmount} label="Bid Amount"  name="bidAmount" placeholder="Bid Amount"
+                                                />
+                                               
+                                            </div>
+                                        </div>
+
+                                    </ModalBody>
                                     <ModalFooter>
-                                        <Button className="btn btn-outline-primary" onClick={this.toggle} >Bid</Button>{'   '}
-                                        <Button className="btn btn-outline-secondary" onClick={this.toggle} >Bid</Button>
+                                        <Button className="btn btn-outline-primary" onClick={this.toggle} >Save</Button>{'   '}
+                                        <Button className="btn btn-outline-secondary" onClick={this.toggle} >Cancel</Button>
                                     </ModalFooter>
                                 </Modal>
                                 <button className="btn btn-outline-primary btn-small" id="btnBid" onClick={this.toggle} >Bid</button>
