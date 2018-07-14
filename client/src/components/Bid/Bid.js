@@ -3,7 +3,7 @@ import './Bid.css';
 import { Link } from 'react-router-dom';
 import { Cards } from './Cards';
 import Api from '../../utils/Api';
-import {Modal} from './modal';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class Bid extends Component {
 
@@ -12,7 +12,8 @@ class Bid extends Component {
         jobDescription: "",
         maxPayment: "",
         auctionDays: "",
-        jobs: []
+        jobs: [],
+        modal: false
     }
 
     componentDidMount() {
@@ -30,6 +31,12 @@ class Bid extends Component {
             .catch(err => console.log(err));
     };
 
+    toggle = () => {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
     render() {
         return (
 
@@ -44,11 +51,16 @@ class Bid extends Component {
                                     timer={job.auctionDays}
                                     key= {index}
                                 />
-                                <Modal/>
-                                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                 Launch demo modal
-                                </button>
-                                <button className="btn btn-outline-primary btn-small" id="btnBid" data-toggle="modal" data-target="#exampleModalCenter">Bid</button>
+                                
+                                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                                    <ModalHeader toggler={this.toggle}>{job.jobTitle}</ModalHeader>
+                                    <ModalBody></ModalBody>
+                                    <ModalFooter>
+                                        <Button className="btn btn-outline-primary" onClick={this.toggle} >Bid</Button>{'   '}
+                                        <Button className="btn btn-outline-secondary" onClick={this.toggle} >Bid</Button>
+                                    </ModalFooter>
+                                </Modal>
+                                <button className="btn btn-outline-primary btn-small" id="btnBid" onClick={this.toggle} >Bid</button>
                                 
 
                             </div>
