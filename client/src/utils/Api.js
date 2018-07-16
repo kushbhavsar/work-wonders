@@ -12,8 +12,11 @@ export default {
   saveUsers: function(userData) {
     return axios.post("/users", userData);
   },
+  checkUsers: function() {
+    return axios.post("/users/login");
+  },
   getJobs: function() {
-    return axios.get("/jobs/");
+    return axios.get("/jobs");
   },
   getJobs: function(id) {
     return axios.get("/jobs/" + id);

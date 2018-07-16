@@ -6,13 +6,14 @@ import Col from '../components/Col';
 import LogginForm from '../components/LogginForm';
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
-
+import Welcome from '../components/Welcome';
 
 class Home extends Component {
     render() {
         return (
             <div>
                 <Navbar />
+                <Welcome />
                 <Container>
                     <Row>
                         <Col size='md-12'>
