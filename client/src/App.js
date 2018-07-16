@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import BidAuction from './pages/BidAuction';
 import Postpage from './pages/Postpage';
+import Bidpage from './pages/Bidpage'
 
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
             < Route  exact path = "/postpage" component = {Postpage}/> 
             < Route  exact path = "/register" component = {Register}/>
             < Route  exact path = "/bidauction" component = {BidAuction}/> 
+            < Route exact path = "/bidpage" component = {Bidpage} />
           </Switch>
         </div>
 
