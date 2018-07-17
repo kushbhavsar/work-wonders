@@ -2,11 +2,6 @@ const router = require("express").Router();
 // const db = require("../models");
 const usersController = require("../controllers/usersController");
 
-router.route("/users")
-  .get(usersController.findAll)
-  
-  .post(usersController.create);
-
   router.route("/users")
   .get(usersController.findAll)
   .post(usersController.create);

@@ -12,6 +12,9 @@ export default {
   saveUsers: function(userData) {
     return axios.post("/users", userData);
   },
+  checkUsers: function() {
+    return axios.post("/users/login");
+  },
   getJobs: function() {
     return axios.get("/jobs");
   },
@@ -26,5 +29,8 @@ export default {
   },
   saveJobs: function(jobData) {
     return axios.post("/jobs", jobData);
+  },
+  updateAmount: function() {
+    return axios.put("/bidAmount");
   }
 };

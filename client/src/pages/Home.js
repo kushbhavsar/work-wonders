@@ -6,14 +6,17 @@ import Col from '../components/Col';
 import LogginForm from '../components/LogginForm';
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
-
+import Welcome from '../components/Welcome';
 
 class Home extends Component {
     render() {
         return (
             <div>
                 <Navbar />
+                
                 <Container>
+                        
+                <Welcome />
                     <Row>
                         <Col size='md-12'>
                             <h1>Work For Me</h1>
@@ -22,7 +25,7 @@ class Home extends Component {
 
                     <Row>
 
-                        <Col size='md-3 sm-1'  />
+                        <Col size='md-3 sm-1' />
 
                         <Col size='md-6 sm-6'>
                             <LogginForm />
