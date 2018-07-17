@@ -5,7 +5,7 @@ import { Cards } from './Cards';
 import Api from '../../utils/Api';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Input } from '../RegistrationForm/Forms/Input';
-import Timer from './Timer';
+//import Timer from './Timer';
 class Bid extends Component {
 
     state = {
@@ -16,19 +16,35 @@ class Bid extends Component {
         jobs: [],
         modal: false,
         bidAmount: "", // saves user bid. We should post this to the dB
-        seconds: "",
-        minutes: "",
-        hours: "",
-        postDate: ""
+        seconds: 1000,
+       // minutes: "",
+       // hours: "",
+       // postDate: ""
     }
 
     componentDidMount() {
         this.loadJobs();
+        this.interval = setInterval(() => this.tick(), 1000);
+        this.timer();
     }
 
     componentWillUnmount() {
-        //clearInterval(this.interval)
+        clearInterval(this.interval);
     }
+
+    timer () {
+        this.state.jobs.map((newJob) => {
+            console.log('seconds '+ newJob.auctionDays)
+           // key = index;
+        })
+    }
+    tick() {
+        //seconds
+        this.setState(prevState => ({
+            seconds: prevState.seconds - 1
+            }));
+
+      }
 
     handleInputChange = event => {
         const {name, value} = event.target;
@@ -63,43 +79,40 @@ class Bid extends Component {
         this.setState({
             modal: !this.state.modal
         });
-    }
+    };
 
-/*
-   bidCounter = (postDate, endDate) => {
-       Timer.countDown(postDate,endDate)
-   }
-*/
     render() {
         return (
 
             <div>
                 {
-                    this.state.jobs.map((job, _id) => {
+                    this.state.jobs.map((job) => {
                         return (
-                            <div  >
+                            <div key={job._id}>
                                 <Cards
                                 
                                     jobTitle={job.jobTitle}
                                     jobDescription={job.jobDescription}
                                     timer={job.auctionDays}
                                     postDate={job.date}
-                                    days={this.state.days}
-                                    hours={this.state.hours}
-                                    minutes={this.state.minutes}
+
+                                  //  days={this.state.days}
+                                  //  hours={this.state.hours}
+                                  //  minutes={this.state.minutes}
                                     seconds={this.state.seconds}
                                     //counter = {this.bidCounter(postDate)}
-                                    key={job._id}
 
                                 />
 
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                                    <ModalHeader >{job.jobTitle}</ModalHeader>
+                                    <ModalHeader > {job.jobTitle}</ModalHeader>
                                     <ModalBody>
                                         <form>
                                             <div className="form-row">
                                                 <div className="form-group col-md-6">
                                                     <Input
+                                                        key={job._id}
+
                                                         value={this.state.bidAmount} 
                                                         label="Bid Amount" 
                                                         name="bidAmount"
