@@ -6,6 +6,7 @@ const jobSchema = new Schema({
     jobDescription: { type: String, required: true },
     maxPayment: { type: Number, require: true },
     auctionDays: { type: String, required: true },
+    bidAmount:{type:Number, require:true},
     date: { type: Date, default: Date.now }
 });
 

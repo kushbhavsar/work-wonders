@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Bid.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { Cards } from './Cards';
 import Api from '../../utils/Api';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Input } from '../RegistrationForm/Forms/Input';
-import Timer from './Timer';
+//import Timer from './Timer';
+
 class Bid extends Component {
 
     state = {
@@ -101,7 +102,7 @@ class Bid extends Component {
                                                 <div className="form-group col-md-6">
                                                     <Input
                                                         value={this.state.bidAmount} 
-                                                        label="Bid Amount" 
+                                                        label="bidAmount" 
                                                         name="bidAmount"
                                                         placeholder="Bid Amount"
                                                         onChange={this.handleInputChange}

@@ -29,5 +29,8 @@ export default {
   },
   saveJobs: function(jobData) {
     return axios.post("/jobs", jobData);
+  },
+  updateAmount: function() {
+    return axios.put("/bidAmount");
   }
 };

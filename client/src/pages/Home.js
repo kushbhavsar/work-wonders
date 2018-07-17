@@ -13,8 +13,10 @@ class Home extends Component {
         return (
             <div>
                 <Navbar />
-                <Welcome />
+                
                 <Container>
+                        
+                <Welcome />
                     <Row>
                         <Col size='md-12'>
                             <h1>Work For Me</h1>
@@ -23,7 +25,7 @@ class Home extends Component {
 
                     <Row>
 
-                        <Col size='md-3 sm-1'  />
+                        <Col size='md-3 sm-1' />
 
                         <Col size='md-6 sm-6'>
                             <LogginForm />
