@@ -75,8 +75,8 @@ class App extends Component {
         <Route
           exact path = "/register" 
           component = {Register}
-          />
         />
+        
         < Route  exact path = "/bidauction"
          component = {BidAuction}
          /> 
