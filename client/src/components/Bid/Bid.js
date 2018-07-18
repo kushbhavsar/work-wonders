@@ -5,7 +5,7 @@ import { Cards } from './Cards';
 import Api from '../../utils/Api';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Input } from '../RegistrationForm/Forms/Input';
-//import Timer from './Timer';
+import Timer from './Timer';
 class Bid extends Component {
 
     state = {
@@ -16,35 +16,34 @@ class Bid extends Component {
         jobs: [],
         modal: false,
         bidAmount: "", // saves user bid. We should post this to the dB
-        seconds: 1000,
-       // minutes: "",
-       // hours: "",
+        timeString: "",
+      //  days: "",
+      //  hours: "",
+      //  minutes: "",
+      //  seconds:"",
        // postDate: ""
     }
 
     componentDidMount() {
         this.loadJobs();
-        this.interval = setInterval(() => this.tick(), 1000);
-        this.timer();
+        this.interval = setInterval(() => this.countDownTimer(), 1000);
+       // this.timer();
     }
 
     componentWillUnmount() {
         clearInterval(this.interval);
     }
 
-    timer () {
-        this.state.jobs.map((newJob) => {
-            console.log('seconds '+ newJob.auctionDays)
-           // key = index;
-        })
+    countDownTimer(postDate, endDate) {
+      return  Timer.counter(postDate,endDate);
     }
+   
     tick() {
-        //seconds
+        
         this.setState(prevState => ({
             seconds: prevState.seconds - 1
             }));
-
-      }
+    }
 
     handleInputChange = event => {
         const {name, value} = event.target;
@@ -62,6 +61,8 @@ class Bid extends Component {
             bidAmount:""
         })
         this.toggle();
+        //this.timer();
+
     }
 
     loadJobs = () => {
@@ -87,21 +88,22 @@ class Bid extends Component {
             <div>
                 {
                     this.state.jobs.map((job) => {
+                        
                         return (
                             <div key={job._id}>
                                 <Cards
                                 
-                                    jobTitle={job.jobTitle}
-                                    jobDescription={job.jobDescription}
-                                    timer={job.auctionDays}
-                                    postDate={job.date}
-
-                                  //  days={this.state.days}
-                                  //  hours={this.state.hours}
-                                  //  minutes={this.state.minutes}
-                                    seconds={this.state.seconds}
+                                    jobTitle = {job.jobTitle}
+                                    jobDescription = {job.jobDescription}
+                                    timer = {job.auctionDays}
+                                    postDate = {job.date}
+                                   // timerArray = {this.countDownTimer(job.date, job.auctionDays)}
+                                   timeString={this.countDownTimer(job.date,job.auctionDays)}
+                                   // hours = {this.state.hours}
+                                   // minutes = {this.state.minutes}
+                                   // seconds = {this.state.seconds }
+                                   // days = {this.state.days}
                                     //counter = {this.bidCounter(postDate)}
-
                                 />
 
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -111,8 +113,6 @@ class Bid extends Component {
                                             <div className="form-row">
                                                 <div className="form-group col-md-6">
                                                     <Input
-                                                        key={job._id}
-
                                                         value={this.state.bidAmount} 
                                                         label="Bid Amount" 
                                                         name="bidAmount"
