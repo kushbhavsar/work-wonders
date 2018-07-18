@@ -3,7 +3,15 @@ import axios from "axios";
 export default {
   
   getUsers: function() {
-    return axios.get("/users");
+    return axios.get("/users/login");
+  },
+  checkUsers: function (data) {
+    console.log(data);
+    return axios.post("/login", data);
+  },
+
+  updateUsers: function() {
+    return axios.put("/users");
   },
 
   getUsers: function(id) {
@@ -12,6 +20,7 @@ export default {
   saveUsers: function(userData) {
     return axios.post("/users", userData);
   },
+
   getJobs: function() {
     return axios.get("/jobs/");
   },

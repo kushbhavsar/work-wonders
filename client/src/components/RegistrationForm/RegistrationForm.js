@@ -51,10 +51,10 @@ class RegistrationForm extends Component {
             zip: this.state.zip
 
         })
-         .catch(err => console.log(err));
+         .catch(err => console.log(err.response));
 
 
-       window.location.href = "/bidauction" 
+    //    window.location.href = "/bidauction" 
     
         this.setState({ firstName: "", lastName: "", password: "", email: "", address: "",address_2:"", city: "", USstate: "", zip: "" })
     };

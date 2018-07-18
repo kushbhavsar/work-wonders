@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 const Register = () => (
     <div>
-        <Navbar/>
+        
         <Container>
             <Row>
                 <Col size='md-12'>

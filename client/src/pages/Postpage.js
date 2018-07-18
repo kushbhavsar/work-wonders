@@ -10,7 +10,7 @@ import PostJob from '../components/PostJob';
 const Postpage = () => (
 
     <div>
-        <Navbar/>
+    
         <Container>
             <Row>
                 <Col size='md-3'/>
