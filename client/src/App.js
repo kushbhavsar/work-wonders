@@ -84,6 +84,9 @@ class App extends Component {
          < Route  exact path = "/postpage"
           component = {Postpage}
           /> 
+          < Route  exact path = "/bidpage"
+         component = {Bidpage}
+         /> 
       </div>
     );
   }

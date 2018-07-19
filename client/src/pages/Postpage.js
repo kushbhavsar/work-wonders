@@ -12,6 +12,12 @@ const Postpage = () => (
     <div>
     
         <Container>
+        <Row>
+                        <Col size='md-12'>
+                            <h1>Work For Me</h1>
+                        </Col>
+                    </Row>
+                    
             <Row>
                 <Col size='md-3'/>
                 <Col size='md-6'>

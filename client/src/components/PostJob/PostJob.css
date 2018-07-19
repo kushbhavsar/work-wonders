@@ -18,3 +18,10 @@
 #jobDescription {
     width: 250%;
 }
+
+#postForm {
+    border-style: double;
+    padding: 15px;
+    border-color: grey;
+    background-color: whitesmoke;
+}

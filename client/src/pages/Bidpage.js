@@ -12,11 +12,11 @@ class Bidpage extends Component  {
     render() {
         return (
             <div>
-                <Navbar />
+                {/* <Navbar /> */}
                 <Container>
                     <Row>
                         <Col size='md-12'>
-                            <h1>Current Jobs</h1>
+                            <h1>Work For Me</h1>
                         </Col>
 
                         <Col size="md-12">

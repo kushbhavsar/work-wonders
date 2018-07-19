@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   
   getUsers: function() {
-    return axios.get("/users/login");
+    return axios.get("/users");
   },
   // checkUsers: function (data) {
   //   console.log(data);

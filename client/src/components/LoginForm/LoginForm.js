@@ -8,7 +8,9 @@ import Api from "../../utils/Api";
 class LoginForm extends Component {
     state = {
         username: "",
-        password: ""
+        usernameError: "",
+        password: "",
+        passwordError:""
 
     }
 
@@ -20,14 +22,38 @@ class LoginForm extends Component {
         });
     };
 
+    // validate = () => {
+
+    //     let isError = false;
+    //     const errors ={};
+
+    //     if (this.state.username.indexOf("@") === -1){
+    //         isError =true;
+    //         errors.usernameError = "Requires valid email";
+    //     }
+
+    //     if (isError) {
+    //         this.setState({
+    //             ...this.state,
+    //             ...errors
+    //         });
+    //     }
+
+    //     return isError;
+    // }
+
 
     handleFormSubmit = event => {
         event.preventDefault();
+        //validating
+        // const val = validate();
+        // if(!err){
+        //clear form
         this.setState({
             username: "",
             password: ""
         });
-
+    
         console.log(this.state);
 
         window.location.href = "/bidauction";
@@ -85,6 +111,7 @@ class LoginForm extends Component {
                                 name="username"
                                 value={this.state.username}
                                 onChange={this.handleInputChange}
+                                errorText={this.state.usernameError}
                             />
 
                         </div>
@@ -99,6 +126,7 @@ class LoginForm extends Component {
                                 name="password"
                                 value={this.state.password}
                                 onChange={this.handleInputChange}
+                                errorText={this.state.passwordError}
                             />
 
                         </div>
