@@ -8,7 +8,7 @@ router.route("/jobs")
   .post(jobsController.create);
 
 router
-  .route("/:id")
+  .route("/bidAmount")
   .get(jobsController.findById)
   .put(jobsController.update)
   .delete(jobsController.remove);

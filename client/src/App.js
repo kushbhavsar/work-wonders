@@ -8,6 +8,7 @@ import BidAuction from './pages/BidAuction';
 import Postpage from './pages/Postpage';
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
+import Bidpage from './pages/Bidpage'
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
+    axios.get('/users/login').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {

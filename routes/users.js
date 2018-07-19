@@ -36,7 +36,7 @@ router.post('/users', (req, res) => {
 })
 
 router.post(
-  '/login',
+  'users/login',
   function (req, res, next) {
     console.log('routes/user.js, login, req.body: ');
     console.log(req.body)
@@ -52,7 +52,7 @@ router.post(
   }
 )
 
-router.get('/', (req, res, next) => {
+router.get('/users/login', (req, res, next) => {
   console.log('===== user!!======')
   console.log(req.user)
   if (req.user) {

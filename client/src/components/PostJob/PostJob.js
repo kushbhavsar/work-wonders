@@ -37,7 +37,7 @@ class PostJob extends Component {
         })
             .catch(err => console.log(err));
 
-            // window.location.href = "/bidpage"
+             window.location.href = "/bidpage"
 
         this.setState({ jobTitle: "", jobDescription: "", maxPayment: "", auctionDays: "", })
     }

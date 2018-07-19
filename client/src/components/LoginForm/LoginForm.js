@@ -30,6 +30,9 @@ class LoginForm extends Component {
 
         console.log(this.state);
 
+        window.location.href = "/bidauction";
+
+
         Api.checkUsers({
             email: this.state.username,
             password: this.state.password
@@ -45,7 +48,6 @@ class LoginForm extends Component {
                         username: response.data.username
                     })
 
-                    window.location.href = "/bidauction";
 
                 } else  {
 

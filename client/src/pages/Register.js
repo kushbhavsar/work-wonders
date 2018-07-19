@@ -4,7 +4,7 @@ import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
 import RegistrationForm from '../components/RegistrationForm';
-import Navbar from '../components/Navbar';
+//import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Register = () => (
