@@ -88,7 +88,7 @@ export default {
 
     },
 
-    stopTimer:function () {
+    stopTimer:function (intervalId) {
 
         clearInterval(this.intervalId);
         this.clockRunning = false;
@@ -109,20 +109,23 @@ export default {
 
         let timeRemaining = (newPostDate - parseInt(startDate))/1000;
 
-        if (timeRemaining < 0) {
+      //  if (timeRemaining < 0) {
 
-            console.log('Bid has expired');
-        } else {
+      //      console.log('Bid has expired');
+      //  } else {
 
             return timeRemaining;
-        }
+      //  }
         
     },
 
     counter: function(postDate, endDate) {
 
         let timeCount = this.getTimePeriod(postDate, endDate);
+
+        
         let convertedTime = this.timeConverter(timeCount)
+
 
         return convertedTime;
     },
@@ -157,11 +160,16 @@ export default {
                 hours = '0' + hours;
             }
 
-            let timeString = `${days} days ${hours} hrs: ${minutes} mins: ${seconds} secs`
-            console.log( timeString);
+            let timeString = {days: days,
+                              minutes:minutes,
+                              hours: hours,
+                              seconds: seconds
+                            }
+           // console.log( timeString);
 
             //let timerArray = [days, hours, minutes, seconds]
             //console.log(timerArray)
+            
             return timeString;
         }   
             
