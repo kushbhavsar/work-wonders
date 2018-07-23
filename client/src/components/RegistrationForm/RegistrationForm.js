@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input, USstate } from './Forms';
 import './RegistrationForm.css';
 import Api from "../../utils/Api";
+import Container from '../Container';
 
 class RegistrationForm extends Component {
     state = {
@@ -51,7 +52,7 @@ class RegistrationForm extends Component {
             zip: this.state.zip
 
         })
-         .catch(err => console.log(err));
+         .catch(err => console.log(err.response));
 
 
        window.location.href = "/bidauction" 
@@ -62,90 +63,90 @@ class RegistrationForm extends Component {
     render() {
         return (
             <form >
+                <Container>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <Input
+                                value={this.state.firstName} label="First Name" onChange={this.handleInputChange} name="firstName" placeholder="First Name" 
+                            />
+                            <div className="invalid-feedback">
+                                Please enter your First name.
+                            </div>
+                        </div>
 
-                <div className="form-row">
-                    <div className="form-group col-md-6">
-                        <Input
-                            value={this.state.firstName} label="First Name" onChange={this.handleInputChange} name="firstName" placeholder="First Name" 
-                        />
-                        <div className="invalid-feedback">
-                            Please enter your First name.
+                        <div className="form-group col-md-6">
+
+                            <Input
+                                value={this.state.lastName} label="Last Name" onChange={this.handleInputChange}
+                                name="lastName" placeholder="Last Name" 
+                            />
                         </div>
                     </div>
 
-                    <div className="form-group col-md-6">
-
-                        <Input
-                            value={this.state.lastName} label="Last Name" onChange={this.handleInputChange}
-                            name="lastName" placeholder="Last Name" 
-                        />
-                    </div>
-                </div>
-
-                <div className="form-row">
-                    <div className="form-group col-md-6">
-                        <Input
-                            value={this.state.email} label="Email" onChange={this.handleInputChange}
-                            name="email" placeholder="email@example.com" 
-                        />
-                    </div>
-                
-                    <div className="form-group col-md-6">
-                        <Input
-                            value={this.state.password} label="Password" onChange={this.handleInputChange}
-                            name="password" placeholder="password" 
-                        />
-                    </div>
-                </div>
-
-                <div className="form-row">
-                    <div className="form-group col-md-6" >
-                        <Input
-                            value={this.state.address} label="Address" onChange={this.handleInputChange}
-                            name="address" placeholder="123 Walnut Street" 
-                        />
-                    </div>
-                    <div className="form-group col-md-6" />
-                </div>
-
-                <div className="form-row">
-                    <div className="form-group col-md-6" >
-                        <Input
-                            value={this.state.address_2} label="Address 2" onChange={this.handleInputChange}
-                            name="address_2" placeholder="Apt, Studio or Floor" 
-                        />
-                    </div>
-                    <div className="form-group col-md-6" />
-                </div>
-
-                <div className="form-row">
-                    <div className="form-group col-md-4" >
-                        <Input
-                            value={this.state.city} label="City" onChange={this.handleInputChange}
-                            name="city" placeholder="City" 
-                        />
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <Input
+                                value={this.state.email} label="Email" onChange={this.handleInputChange}
+                                name="email" placeholder="email@example.com" 
+                            />
+                        </div>
+                    
+                        <div className="form-group col-md-6">
+                            <Input
+                                value={this.state.password} label="Password" onChange={this.handleInputChange}
+                                name="password" placeholder="password" 
+                            />
+                        </div>
                     </div>
 
-                    <div className="form-group col-md-4" >
-                        <USstate
-                            value={this.state.USstate} label="State" onChange={this.handleInputChange}
-                            name="State" placeholder="State"  
-                        />
+                    <div className="form-row">
+                        <div className="form-group col-md-6" >
+                            <Input
+                                value={this.state.address} label="Address" onChange={this.handleInputChange}
+                                name="address" placeholder="123 Walnut Street" 
+                            />
+                        </div>
+                        <div className="form-group col-md-6" />
                     </div>
 
-                    <div className="form-group col-md-4" >
-                        <Input
-                            value={this.state.zip} label="Zip" onChange={this.handleInputChange} name="zip"
-                            placeholder="zip" 
-                        />
+                    <div className="form-row">
+                        <div className="form-group col-md-6" >
+                            <Input
+                                value={this.state.address_2} label="Address 2" onChange={this.handleInputChange}
+                                name="address_2" placeholder="Apt, Studio or Floor" 
+                            />
+                        </div>
+                        <div className="form-group col-md-6" />
                     </div>
-                </div>
+
+                    <div className="form-row">
+                        <div className="form-group col-md-4" >
+                            <Input
+                                value={this.state.city} label="City" onChange={this.handleInputChange}
+                                name="city" placeholder="City" 
+                            />
+                        </div>
+
+                        <div className="form-group col-md-4" >
+                            <USstate
+                                value={this.state.USstate} label="State" onChange={this.handleInputChange}
+                                name="State" placeholder="State"  
+                            />
+                        </div>
+
+                        <div className="form-group col-md-4" >
+                            <Input
+                                value={this.state.zip} label="Zip" onChange={this.handleInputChange} name="zip"
+                                placeholder="zip" 
+                            />
+                        </div>
+                    </div>
 
 
-                <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">
-                    Register
-                </button>
-
+                    <button type="submit" onClick={this.handleFormSubmit} className="btn btn-lg" id="registerBtn">
+                        Register
+                    </button>
+                </Container>
             </form>
         );
     }

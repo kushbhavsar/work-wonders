@@ -9,7 +9,7 @@ import Post_or_Bid from "../components/Post_or_Bid";
 
 const BidAuction = () => (
     <div>
-        <Navbar/>
+        
         <Container>
             <Row>
                 <Col size='md-12'>

@@ -37,7 +37,7 @@ class PostJob extends Component {
         })
             .catch(err => console.log(err));
 
-            // window.location.href = "/bidpage"
+             window.location.href = "/bidpage"
 
         this.setState({ jobTitle: "", jobDescription: "", maxPayment: "", auctionDays: "", })
     }
@@ -79,7 +79,7 @@ class PostJob extends Component {
 
                 <div className='form-group' >
                     <label htmlFor='auctionDays'>Post job for # days</label>
-                    <input id="auctionDays" type='text' className='form-control' name='auctionDays' value={this.state.auctionDays} onChange={this.handleInputChange} placeholder='Enter your bid amount' />
+                    <input id="auctionDays" type='text' className='form-control' name='auctionDays' value={this.state.auctionDays} onChange={this.handleInputChange} placeholder='Enter Days' />
                 </div>
 
 

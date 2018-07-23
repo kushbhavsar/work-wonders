@@ -3,16 +3,16 @@ import React, { Component } from "react";
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Col from '../components/Col';
-import LogginForm from '../components/LogginForm';
+import LoginForm from '../components/LoginForm';
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar';
+//import Navbar from '../components/Navbar';
 import Welcome from '../components/Welcome';
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                {/* <Navbar /> */}
                 
                 <Container>
                         
@@ -28,7 +28,7 @@ class Home extends Component {
                         <Col size='md-3 sm-1' />
 
                         <Col size='md-6 sm-6'>
-                            <LogginForm />
+                            <LoginForm />
                         </Col>
 
                         <Col size='md-3 sm-1' />

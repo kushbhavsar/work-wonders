@@ -1,7 +1,9 @@
-#logginform {
+#loginform {
     margin-top: 80px;
-    margin-left: 100px;
-    font-style: "Ubuntu", sans-serif;
+    /* margin-left: 100px; */
+   /* font-style: "Ubuntu", sans-serif; */
+   font-family: 'Open Sans', sans-serif;
+
 }
 
 #userName, #inputPassword {
@@ -26,7 +28,7 @@
 
 /*
 @media (min-width: 400px) {
-  #logginform {
+  #loginform {
       margin-top: 0px;
       margin-left: 19px;
   }
