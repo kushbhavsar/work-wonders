@@ -160,11 +160,8 @@ export default {
                 hours = '0' + hours;
             }
 
-            let timeString = {days: days,
-                              minutes:minutes,
-                              hours: hours,
-                              seconds: seconds
-                            }
+            let timeString = `${days} days ${hours}hrs : ${minutes}mins : ${seconds}secs`;
+
            // console.log( timeString);
 
             //let timerArray = [days, hours, minutes, seconds]

@@ -16,7 +16,7 @@ class Bid extends Component {
         jobs: [],
         modal: false,
         bidAmount: "", // saves user bid. We should post this to the dB
-        timeString: "",
+        timeString: [],
         days: "",
         hours: "",
         minutes: "",
@@ -26,38 +26,12 @@ class Bid extends Component {
 
     componentDidMount() {
         this.loadJobs();
-        let intervalId = setInterval(() => this.timeCountdown(), 1000);
-
-        this.setState({
-            intervalId: intervalId
-        })
     }
 
     componentWillUnmount() {
         clearInterval(this.state.intervalId);
     }
     
-    timeCountdown() {      
-        this.state.jobs.map((job, index) => {
-
-            let timeArray = Timer.counter(job.date, job.auctionDays);
-            console.log(timeArray)
-
-
-                if (timeArray) {   
-                    
-                     this.setState({
-                        days: timeArray.days,
-                        hours: timeArray.hours,
-                        minutes: timeArray.minutes,
-                        seconds: timeArray.seconds
-                    })
-    
-                }
-
-        })
-
-    }
    
     handleInputChange = event => {
         const {name, value} = event.target;
@@ -100,6 +74,9 @@ class Bid extends Component {
             <div>
                 {
                     this.state.jobs.map((job, _id) => {
+
+                        let time = Timer.counter(job.date, job.auctionDays);
+
                         
                         return (
                             <div key={job._id}>
@@ -110,11 +87,11 @@ class Bid extends Component {
                                     timer = {job.auctionDays}
                                     postDate = {job.date}
                                     // timerArray = {this.countDownTimer(job.date, job.auctionDays)}
-                                    //  timeString={ this.state.timeString}
-                                    hours = {this.state.hours}
-                                    minutes = {this.state.minutes}
-                                    seconds = {this.state.seconds }
-                                    days = {this.state.days}
+                                    timeString={ this.state.timeString}
+                                    //hours = {this.state.hours}
+                                   // minutes = {this.state.minutes}
+                                   // seconds = {this.state.seconds }
+                                   // days = {this.state.days}
                                         //counter = {this.bidCounter(postDate)}
                                 />
 
