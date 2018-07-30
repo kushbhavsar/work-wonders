@@ -1,4 +1,5 @@
 import React from 'react';
+import  './Cards.css';
 
 export const Cards = props => (
     <div className="card" style={{width: '18rem'}}>
@@ -8,5 +9,6 @@ export const Cards = props => (
             <div id="timer">{props.timeString}</div>
         </div>
 
-    </div>
+     </div>
+    //</div>   
 );

@@ -1,3 +1,4 @@
+const express = require('express');
 const router = require("express").Router();
 // const db = require("../models");
 const jobsController = require("../controllers/jobsController");
@@ -7,7 +8,7 @@ router.route("/jobs")
   .post(jobsController.create);
 
 router
-  .route("/:id")
+  .route("/bidAmount")
   .get(jobsController.findById)
   .put(jobsController.update)
   .delete(jobsController.remove);

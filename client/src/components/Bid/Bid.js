@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Bid.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { Cards } from './Cards';
 import Api from '../../utils/Api';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Input } from '../RegistrationForm/Forms/Input';
 import Timer from './Timer';
+
 class Bid extends Component {
 
     state = {
@@ -71,7 +72,8 @@ class Bid extends Component {
     render() {
         return (
 
-            <div>
+            <div className= "Cardspace">
+                
                 {
                     this.state.jobs.map((job, _id) => {
 
@@ -86,6 +88,7 @@ class Bid extends Component {
                                     jobDescription = {job.jobDescription}
                                     timer = {job.auctionDays}
                                     postDate = {job.date}
+                                    maxPayment = {job.maxPayment}
                                     // timerArray = {this.countDownTimer(job.date, job.auctionDays)}
                                     timeString={ this.state.timeString}
                                     //hours = {this.state.hours}
@@ -98,22 +101,23 @@ class Bid extends Component {
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                                     <ModalHeader > {job.jobTitle}</ModalHeader>
                                     <ModalBody>
-                                        <form>
-                                            <div className="form-row">
-                                                <div className="form-group col-md-6">
-                                                    <Input
-                                                        value={this.state.bidAmount} 
-                                                        label="Bid Amount" 
-                                                        name="bidAmount"
-                                                        placeholder="Bid Amount"
-                                                        onChange={this.handleInputChange}
-                                                       
-                                                    />
+                                       <div class="container-fluid">     
+                                            <form>
+                                                <div className="form-row">
+                                                    <div className="form-group col-md-4">
+                                                        <Input
+                                                            value={this.state.bidAmount} 
+                                                            label="bidAmount" 
+                                                            name="bidAmount"
+                                                            placeholder="Bid Amount"
+                                                            onChange={this.handleInputChange}
+                                                        
+                                                        />
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </form>
-
+                                            </form>
+                                        </div>
                                     </ModalBody>
                                     <ModalFooter>
                                         <Button className="btn btn-outline-primary" onClick={this.handleFormSubmit} >Save</Button>{'   '}

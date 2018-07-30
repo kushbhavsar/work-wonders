@@ -1,4 +1,27 @@
 #btnBid {
     margin-top: 5px;
     margin-bottom: 20px;
+    background-color: #e6524c;
+    border:#e6524c;
+    color: #fff;
+}
+
+/* h1:after {
+    content:"Current Jobs";
+    position: absolute;
+    left: 8px;
+    top: 32px;
+    
+  } */
+
+  form-group col-md-4 {
+    float: left;
+    width: 33%;
+
+  }
+
+
+#Cardspace {
+    padding-top: 20px;
+   
 }

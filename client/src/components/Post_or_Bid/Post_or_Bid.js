@@ -13,7 +13,9 @@ class Post_or_Bid extends Component {
                 </h3>
 
                 <div id="btngroup">
-                    <button type='button' id="bid" className = 'btn btn-lg'>Bid</button>
+                    <Link to ="/bidpage">
+                    <   button type='button' id="bid" className = 'btn btn-lg'>Bid</button>
+                    </Link>
                     
                     <Link to="/postpage">
                         <button type='button' id="postjob" className = 'btn btn-lg '>Post a Job</button>
